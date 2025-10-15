@@ -663,7 +663,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 #logo {
     position: absolute;
     top: 10px;
-    Left: 40px;
+    Left: 50px;
     width: 80px;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.7);
