@@ -24,6 +24,10 @@
         <title></title>
     </head>
     <body>
+
+<img id="logo" src="logo.png" alt="Logo" />
+<h1 id="carte-titre">Carte interactive des zones protégées</h1>
+
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
@@ -42,8 +46,8 @@
         <script src="js/leaflet-measure.js"></script>
         <script src="data/Champs_2.js"></script>
         <script src="data/Chemindaccs_3.js"></script>
-        <script src="data/Fermes_4.js"></script>
-        <script src="data/Stockage_5.js"></script>
+        <script src="data/Stockage_4.js"></script>
+        <script src="data/Fermes_5.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -169,7 +173,6 @@
             maxZoom: 28,
         });
         layer_GoogleSatelliteHybrid_1;
-        map.addLayer(layer_GoogleSatelliteHybrid_1);
         function pop_Champs_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -190,9 +193,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td class="visible-with-data" id="Ferme" colspan="2"><strong>Ferme</strong><br />' + (feature.properties['Ferme'] !== null ? autolinker.link(String(feature.properties['Ferme']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td class="visible-with-data" id="Producteur" colspan="2"><strong>Producteur</strong><br />' + (feature.properties['Producteur'] !== null ? autolinker.link(String(feature.properties['Producteur']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -200,6 +200,9 @@
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Superficie" colspan="2"><strong>Superficie</strong><br />' + (feature.properties['Superficie'] !== null ? autolinker.link(String(feature.properties['Superficie']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Ferme" colspan="2"><strong>Ferme</strong><br />' + (feature.properties['Ferme'] !== null ? autolinker.link(String(feature.properties['Ferme']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -215,14 +218,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(200,71,144,1.0)',
+                fillColor: 'rgba(231,136,134,0.329)',
                 interactive: true,
             }
                     break;
@@ -230,14 +233,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(16,143,240,1.0)',
+                fillColor: 'rgba(156,217,33,0.329)',
                 interactive: true,
             }
                     break;
@@ -245,14 +248,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,237,211,1.0)',
+                fillColor: 'rgba(192,126,223,0.329)',
                 interactive: true,
             }
                     break;
@@ -260,14 +263,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(170,17,217,1.0)',
+                fillColor: 'rgba(223,187,109,0.329)',
                 interactive: true,
             }
                     break;
@@ -275,14 +278,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(40,216,57,1.0)',
+                fillColor: 'rgba(24,21,201,0.329)',
                 interactive: true,
             }
                     break;
@@ -290,14 +293,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,124,114,1.0)',
+                fillColor: 'rgba(106,192,239,0.329)',
                 interactive: true,
             }
                     break;
@@ -305,14 +308,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(235,187,29,1.0)',
+                fillColor: 'rgba(26,210,152,0.329)',
                 interactive: true,
             }
                     break;
@@ -320,14 +323,14 @@
                     return {
                 pane: 'pane_Champs_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.329)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(126,116,212,1.0)',
+                fillColor: 'rgba(218,102,177,0.329)',
                 interactive: true,
             }
                     break;
@@ -346,7 +349,6 @@
             style: style_Champs_2_0,
         });
         bounds_group.addLayer(layer_Champs_2);
-        map.addLayer(layer_Champs_2);
         function pop_Chemindaccs_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -366,6 +368,15 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IDN'] !== null ? autolinker.link(String(feature.properties['IDN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMJEUDONN'] !== null ? autolinker.link(String(feature.properties['NOMJEUDONN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EPURSOL'] !== null ? autolinker.link(String(feature.properties['EPURSOL']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Producteur" colspan="2"><strong>Producteur</strong><br />' + (feature.properties['Producteur'] !== null ? autolinker.link(String(feature.properties['Producteur']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -419,8 +430,121 @@
             styles: [style_Chemindaccs_3_0,style_Chemindaccs_3_1,]
         });
         bounds_group.addLayer(layer_Chemindaccs_3);
-        map.addLayer(layer_Chemindaccs_3);
-        function pop_Fermes_4(feature, layer) {
+        function pop_Stockage_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['descriptio'] !== null ? autolinker.link(String(feature.properties['descriptio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type'] !== null ? autolinker.link(String(feature.properties['Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(String(feature.properties['Lat']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(String(feature.properties['Long']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Epursol'] !== null ? autolinker.link(String(feature.properties['Epursol']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Producteur" colspan="2"><strong>Producteur</strong><br />' + (feature.properties['Producteur'] !== null ? autolinker.link(String(feature.properties['Producteur']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Numéro" colspan="2"><strong>Numéro</strong><br />' + (feature.properties['Numéro'] !== null ? autolinker.link(String(feature.properties['Numéro']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Adresse" colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(String(feature.properties['Adresse']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Catégorie" colspan="2"><strong>Catégorie</strong><br />' + (feature.properties['Catégorie'] !== null ? autolinker.link(String(feature.properties['Catégorie']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Stockage_4_0() {
+            return {
+                pane: 'pane_Stockage_4',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(235,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        function style_Stockage_4_1() {
+            return {
+                pane: 'pane_Stockage_4',
+                radius: 1.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Stockage_4');
+        map.getPane('pane_Stockage_4').style.zIndex = 404;
+        map.getPane('pane_Stockage_4').style['mix-blend-mode'] = 'normal';
+        var layer_Stockage_4 = new L.geoJson.multiStyle(json_Stockage_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Stockage_4',
+            layerName: 'layer_Stockage_4',
+            pane: 'pane_Stockage_4',
+            onEachFeature: pop_Stockage_4,
+            pointToLayers: [function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Stockage_4_0(feature));
+            },function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Stockage_4_1(feature));
+            },
+        ]});
+        bounds_group.addLayer(layer_Stockage_4);
+        function pop_Fermes_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -443,6 +567,9 @@
                         <td class="visible-with-data" id="Ferme" colspan="2"><strong>Ferme</strong><br />' + (feature.properties['Ferme'] !== null ? autolinker.link(String(feature.properties['Ferme']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td class="visible-with-data" id="Téléphon" colspan="2"><strong>Téléphon</strong><br />' + (feature.properties['Téléphon'] !== null ? autolinker.link(String(feature.properties['Téléphon']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td class="visible-with-data" id="Adresse" colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(String(feature.properties['Adresse']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -450,9 +577,6 @@
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Notes" colspan="2"><strong>Notes</strong><br />' + (feature.properties['Notes'] !== null ? autolinker.link(String(feature.properties['Notes']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Téléphon" colspan="2"><strong>Téléphon</strong><br />' + (feature.properties['Téléphon'] !== null ? autolinker.link(String(feature.properties['Téléphon']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td class="visible-with-data" id="Prospectio" colspan="2"><strong>Prospectio</strong><br />' + (feature.properties['Prospectio'] !== null ? autolinker.link(String(feature.properties['Prospectio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -465,11 +589,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Fermes_4_0(feature) {
+        function style_Fermes_5_0(feature) {
             switch(String(feature.properties['Intérêt'])) {
                 case 'Conditionnel':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -485,7 +609,7 @@
                     break;
                 case 'Défavorable':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -501,7 +625,7 @@
                     break;
                 case 'Incertain':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -517,7 +641,7 @@
                     break;
                 case 'Ouvert':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -533,7 +657,7 @@
                     break;
                 case 'Prospect':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -549,7 +673,7 @@
                     break;
                 case 'Utilisateur':
                     return {
-                pane: 'pane_Fermes_4',
+                pane: 'pane_Fermes_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -565,123 +689,26 @@
                     break;
             }
         }
-        map.createPane('pane_Fermes_4');
-        map.getPane('pane_Fermes_4').style.zIndex = 404;
-        map.getPane('pane_Fermes_4').style['mix-blend-mode'] = 'normal';
-        var layer_Fermes_4 = new L.geoJson(json_Fermes_4, {
+        map.createPane('pane_Fermes_5');
+        map.getPane('pane_Fermes_5').style.zIndex = 405;
+        map.getPane('pane_Fermes_5').style['mix-blend-mode'] = 'normal';
+        var layer_Fermes_5 = new L.geoJson(json_Fermes_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Fermes_4',
-            layerName: 'layer_Fermes_4',
-            pane: 'pane_Fermes_4',
-            onEachFeature: pop_Fermes_4,
+            dataVar: 'json_Fermes_5',
+            layerName: 'layer_Fermes_5',
+            pane: 'pane_Fermes_5',
+            onEachFeature: pop_Fermes_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Fermes_4_0(feature));
+                return L.circleMarker(latlng, style_Fermes_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Fermes_4);
-        map.addLayer(layer_Fermes_4);
-        function pop_Stockage_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td class="visible-with-data" id="Producteur" colspan="2"><strong>Producteur</strong><br />' + (feature.properties['Producteur'] !== null ? autolinker.link(String(feature.properties['Producteur']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Numéro" colspan="2"><strong>Numéro</strong><br />' + (feature.properties['Numéro'] !== null ? autolinker.link(String(feature.properties['Numéro']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Adresse" colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(String(feature.properties['Adresse']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="Catégorie" colspan="2"><strong>Catégorie</strong><br />' + (feature.properties['Catégorie'] !== null ? autolinker.link(String(feature.properties['Catégorie']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Stockage_5_0() {
-            return {
-                pane: 'pane_Stockage_5',
-                radius: 6.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(235,0,0,1.0)',
-                interactive: true,
-            }
-        }
-        function style_Stockage_5_1() {
-            return {
-                pane: 'pane_Stockage_5',
-                radius: 1.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Stockage_5');
-        map.getPane('pane_Stockage_5').style.zIndex = 405;
-        map.getPane('pane_Stockage_5').style['mix-blend-mode'] = 'normal';
-        var layer_Stockage_5 = new L.geoJson.multiStyle(json_Stockage_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Stockage_5',
-            layerName: 'layer_Stockage_5',
-            pane: 'pane_Stockage_5',
-            onEachFeature: pop_Stockage_5,
-            pointToLayers: [function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Stockage_5_0(feature));
-            },function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Stockage_5_1(feature));
-            },
-        ]});
-        bounds_group.addLayer(layer_Stockage_5);
-        map.addLayer(layer_Stockage_5);
+        bounds_group.addLayer(layer_Fermes_5);
+        map.addLayer(layer_Fermes_5);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -736,8 +763,8 @@
             }
         });
         var overlaysTree = [
-            {label: '<img src="legend/Stockage_5.png" /> Stockage', layer: layer_Stockage_5},
-            {label: 'Fermes<br /><table><tr><td style="text-align: center;"><img src="legend/Fermes_4_Conditionnel0.png" /></td><td>Conditionnel</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_4_Défavorable1.png" /></td><td>Défavorable</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_4_Incertain2.png" /></td><td>Incertain</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_4_Ouvert3.png" /></td><td>Ouvert</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_4_Prospect4.png" /></td><td>Prospect</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_4_Utilisateur5.png" /></td><td>Utilisateur</td></tr></table>', layer: layer_Fermes_4},
+            {label: 'Fermes<br /><table><tr><td style="text-align: center;"><img src="legend/Fermes_5_Conditionnel0.png" /></td><td>Conditionnel</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_5_Défavorable1.png" /></td><td>Défavorable</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_5_Incertain2.png" /></td><td>Incertain</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_5_Ouvert3.png" /></td><td>Ouvert</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_5_Prospect4.png" /></td><td>Prospect</td></tr><tr><td style="text-align: center;"><img src="legend/Fermes_5_Utilisateur5.png" /></td><td>Utilisateur</td></tr></table>', layer: layer_Fermes_5},
+            {label: '<img src="legend/Stockage_4.png" /> Stockage', layer: layer_Stockage_4},
             {label: '<img src="legend/Chemindaccs_3.png" /> Chemin d\'accès', layer: layer_Chemindaccs_3},
             {label: 'Champs<br /><table><tr><td style="text-align: center;"><img src="legend/Champs_2_BeauchampRoland0.png" /></td><td>Beauchamp Roland</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_GeoffrionMathieu1.png" /></td><td>Geoffrion Mathieu</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_HebertAlain2.png" /></td><td>Hebert Alain</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_HebertBenoitetEric3.png" /></td><td>Hebert Benoit et Eric</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_HurtubiseLéo4.png" /></td><td>Hurtubise Léo</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_MarleauEric5.png" /></td><td>Marleau Eric</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_NapertBruno6.png" /></td><td>Napert Bruno</td></tr><tr><td style="text-align: center;"><img src="legend/Champs_2_SéguinNicholas7.png" /></td><td>Séguin Nicholas</td></tr></table>', layer: layer_Champs_2},
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_1},
